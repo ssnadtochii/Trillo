@@ -3,7 +3,7 @@
 
 .logo-area {
 
-    margin-left: 2rem;
+    // margin-left: 2rem;
 
     &__logo {
         height: 3.25rem;
@@ -41,6 +41,10 @@
 
         transition: all .2s;
 
+        @media only screen and (max-width: $bp-smallest) {
+            width: 100%;
+        }
+
         &:focus {
             outline: none;
             width: 100%;
@@ -74,6 +78,12 @@
         height: 2rem;
         width: 2rem;
         fill: var(--color-grey-dark-3);
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        margin-top: -2rem;
     }
 }
 
@@ -143,11 +153,24 @@
     font-size: 1.4rem;
     list-style: none;
 
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin-top: 0;
+    }
+
     &__item {
         position: relative;
 
+        @media only screen and (max-width: $bp-medium) {
+            flex-grow: 1;
+        }
+
         &:not(:last-child) {
             margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -193,6 +216,16 @@
 
         position: relative; //positioning this element on top of the before pseudo element used for hover effect
         z-index: 2;
+
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+            padding: 2rem 3rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            padding: 1rem 2rem;
+        }
     }
 
     &__icon {
@@ -202,6 +235,13 @@
         margin-right: 2rem;
 
         fill: currentColor;
+
+        @media only screen and (max-width: $bp-small) {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0;
+            margin-bottom: 5px;
+        }
     }
 }
 
@@ -213,6 +253,10 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 
@@ -244,6 +288,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.75rem;
+            padding: 1rem 2rem;
+        }
     }
 
     &__stars {
@@ -282,11 +331,23 @@
         &--average {
             font-size: 2.25rem;
             margin-bottom: -3px;
+
+            @media only screen and (max-width: $bp-small) {
+                font-size: 1.75rem;
+            }
         }
 
         &--count {
             font-size: .8rem;
             text-transform: uppercase;
+
+            @media only screen and (max-width: $bp-small) {
+                font-size: .5rem;
+            }
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            padding: 0rem 1.5rem;
         }
     }
 }
@@ -405,14 +466,18 @@
         outline: 3px solid white;
 
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 
-    &__count {
-        //this is pushing the avatars to the right edge of the container, can replace justify-content
-        //margin-right: auto;
+    &__friends{
+        display: flex;
     }
+
+    // &__count {
+    //     //this is pushing the avatars to the right edge of the container, can replace justify-content
+    //     //margin-right: auto;
+    // }
 }
 
 
@@ -426,6 +491,11 @@
     margin-bottom: 3.5rem;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 
     &__text {
         margin-bottom: 2rem;
